@@ -1,0 +1,9 @@
+RewriteEngine On
+ 
+# Estas líneas hacen que primero se busque el archivo físico indicado
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+ 
+# En caso de no encontrarlo para a interpretar así la URL
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
