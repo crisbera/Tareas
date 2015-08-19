@@ -4,7 +4,17 @@ abstract class AppController{
 	abstract public function index();
 
 	public function __construct(){
-		$this->db = new ClassPDO();
+
+		$nameController = substr_replace(get_class($this), '', -1);
+		$connection = new DataBaseConfig();
+
+		$this->$nameController = new ClassPDO(
+			$connection->config['drive'],
+			$connection->config['host'],
+			$connection->config['database'],
+			$connection->config['username'],
+			$connection->config['password']
+		);
 	}
 
 	protected function set($name = null, $value=array()){

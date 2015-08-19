@@ -1,29 +1,41 @@
 <div class="row">
-  <div class="col-sm-12"><h2>Lista de tareas</h2></div>
+	<div class="col-sm-9"><h2>Listado de tareas</h2></div>
+	<div class="col-sm-3">
+		<a href="tareas/add">
+	 		<button type="button" class="btn btn-primary add">
+	 			<span class="glyphicon glyphicon-plus"></span> Tarea
+	 		</button>
+	 	</a>
+	 	<a href="categorias/add">
+	 		<button type="button" class="btn btn-primary add">
+	 			<span class="glyphicon glyphicon-plus"></span> Categoria
+	 		</button>
+	 	</a>
+	</div>
+
+	
 </div>
 <div class="row">
-	<div class="col-sm-10">
-<ul class="nav nav-tabs">
+	<div class="col-sm-12">
+		<ul class="nav nav-tabs">
 
-   <?php
-  	$i = 0;
-  	$categoriasId= array();
-	foreach ($categorias as $categoria): 
-		if ($i==0): ?>
-			<li class="active"><a data-toggle="tab" href="#<?php echo $categoria["nombre"]; ?>"><?php echo $categoria["nombre"]; ?></a></li>
-	<?php else: ?>
-		 <li><a data-toggle="tab" href="#<?php echo $categoria["nombre"]; ?>"><?php echo $categoria["nombre"]; ?></a></li>
-	<?php 
-		endif; 
-		$i++;
-		$categoriaId["id"][] = $categoria["id"];
-		$categoriaId["nombre"][] = $categoria["nombre"];
-	endforeach;
-	 ?>
-</ul>
-
-</div>
-  	<div class="col-sm-2"><a href="tareas/add"><button type="button" class="btn btn-primary add"><span class="glyphicon glyphicon-plus"></span> Tarea</button></a></div>
+		   <?php
+		  	$i = 0;
+		  	$categoriasId= array();
+			foreach ($categorias as $categoria): 
+				if ($i==0): ?>
+					<li class="active"><a data-toggle="tab" href="#<?php echo $categoria["nombre"]; ?>"><?php echo $categoria["nombre"]; ?></a></li>
+			<?php else: ?>
+				 <li><a data-toggle="tab" href="#<?php echo $categoria["nombre"]; ?>"><?php echo $categoria["nombre"]; ?></a></li>
+			<?php 
+				endif; 
+				$i++;
+				$categoriaId["id"][] = $categoria["id"];
+				$categoriaId["nombre"][] = $categoria["nombre"];
+			endforeach;
+			 ?>
+		</ul>
+	</div>
 </div>
 
 <div class="tab-content">

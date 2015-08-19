@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-4"><h2>Nueva tarea</h2></div>
   <div class="col-sm-4"></div>
-  <div class="col-sm-4"><br /><a href="tareas"><button type="button" class="btn btn-primary add">Volver a tareas</button></a></div>
+  <div class="col-sm-4"><br /><a href="tareas"><button type="button" class="btn btn-primary add"><span class="glyphicon glyphicon-arrow-left"></span> Volver a tareas</button></a></div>
 </div>
 
 <form action="tareas/add" method="POST" role="form">

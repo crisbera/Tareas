@@ -26,7 +26,7 @@ if (isset($_GET['url'])) {
 }
 
 if(!isset($controller)){
-	$controller = "pages";
+	$controller = "tareas";
 }
 
 if (!isset($action)) {
