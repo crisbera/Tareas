@@ -19,6 +19,9 @@ Sistema de ejemplo para la materia de desarrollo de aplicaciones web, favor de n
 5. Invoca la aplicación desde http://localhost/gestion
 
 **Importante**
+
 Existe un usuario por defecto:
+
 Usuario: admin
+
 Contraseña: admin
