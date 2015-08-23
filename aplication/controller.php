@@ -5,10 +5,9 @@ abstract class AppController{
 
 	public function __construct(){
 
-		$nameController = substr_replace(get_class($this), '', -1);
 		$connection = new DataBaseConfig();
 
-		$this->$nameController = new ClassPDO(
+		$this->db = new ClassPDO(
 			$connection->config['drive'],
 			$connection->config['host'],
 			$connection->config['database'],
@@ -29,8 +28,8 @@ abstract class AppController{
 		if($url["action"]){
 			$path .= "/". $url["action"];
 		}
-		$server="http://".$_SERVER['HTTP_HOST'];
-		header("LOCATION: ".$server."/app/".$path);
+		
+		header("LOCATION: ".APP_URL.$path);
 	}
 
 }

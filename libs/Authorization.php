@@ -16,8 +16,8 @@ class Authorization{
 	static function logged(){
 		session_start();
 		if(!$_SESSION['logged']){
-			$server="http://".$_SERVER['HTTP_HOST'];
-		    header("Location: ".$server."/app/usuarios/login");
+			
+		    header("Location: ".APP_URL."usuarios/login");
 		    exit;
 		}
 	}

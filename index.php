@@ -1,4 +1,11 @@
 <?php
+
+define("APP_FOLDER", "app");
+define("APP_URL", "http://".$_SERVER['SERVER_NAME']."/".APP_FOLDER."/");
+define("APP_URL_CSS", APP_URL."public/css/");
+define("APP_URL_IMG", APP_URL."public/img/");
+define("APP_URL_JS",  APP_URL."public/js/");
+
 define("DS", DIRECTORY_SEPARATOR);
 define("ROOT", realpath(dirname(__FILE__)) . DS);
 define("APP_PATH", ROOT . "aplication" . DS);
