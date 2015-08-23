@@ -1,5 +1,4 @@
 <?php
-
 define("APP_FOLDER", "gestion");
 define("APP_URL", "http://".$_SERVER['SERVER_NAME']."/".APP_FOLDER."/");
 define("APP_URL_CSS", APP_URL."public/css/");
