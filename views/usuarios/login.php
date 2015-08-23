@@ -1,4 +1,4 @@
-<form class="form-signin" action="login" method="POST">
+<form class="form-signin" action="usuarios/login" method="POST">
 <h2 class="form-signin-heading">Inicio de sesión</h2>
 <label for="inputUsername" class="sr-only">Username</label>
 <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
