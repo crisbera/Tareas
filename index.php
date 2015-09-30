@@ -1,4 +1,5 @@
 <?php
+//MODIFICACION JORGE RIVERA MORALES IT102. SALUDOS :D
 define("APP_FOLDER", "gestion");
 define("APP_URL", "http://".$_SERVER['SERVER_NAME']."/".APP_FOLDER."/");
 define("APP_URL_CSS", APP_URL."public/css/");
