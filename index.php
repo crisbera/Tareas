@@ -1,4 +1,7 @@
 <?php
+/** Prueba de comandos para clonar repositorios de otros proyectos  y subir nuevas actualizaciones a los 
+usuarios para ver si aceptan o les gusta las modificaciones**/
+
 define("APP_FOLDER", "gestion");
 define("APP_URL", "http://".$_SERVER['SERVER_NAME']."/".APP_FOLDER."/");
 define("APP_URL_CSS", APP_URL."public/css/");
