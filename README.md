@@ -3,7 +3,6 @@
 Sistema para el manejo de tereas pendientes clasificadas por categorías.
 
 ![ScreenShot](public/img/screenshot-original.jpg)
-![ScreenShot](public/img/screenshot-500x175.jpg)
 
 Tecnologías web usadas:
 - Php 5.6.3
