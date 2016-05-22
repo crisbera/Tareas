@@ -14,7 +14,10 @@ Sistema de ejemplo para la materia de desarrollo de aplicaciones web, favor de n
 
 ##Instalación
 
-1. Para instalar la aplicación, clónala con Git Bash dentro de la carpeta htdocs con la siguiente instrucción: git clone https://github.com/crisbera/Gestion.git gestion 
+1. Para instalar la aplicación, clónala con Git Bash dentro de la carpeta htdocs con la siguiente instrucción: 
+```ShellSession
+git clone https://github.com/crisbera/Gestion.git gestion 
+```
 Debe quedar algo como htdocs/gestion.
 
 2. Crea una base de datos llamada gestion desde phpmyadmin.
