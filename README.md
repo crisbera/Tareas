@@ -26,7 +26,8 @@ Debe quedar algo como htdocs/gestion.
 
 La carpeta de la aplicación debe llamarse gestion y debe estar en htdocs, si la cambias favor de modificar el archivo index.php principal y cambiar el valor de la constante APP_FOLDER por el nombre de la carpeta deseada.
 
-Cambia esto: define("APP_FOLDER", "gestion"); 
+Cambia esto: define("APP_FOLDER", "gestion");
+
 Por esto: define("APP_FOLDER", "nombre_carpeta");
 
 Existe un usuario por defecto:
