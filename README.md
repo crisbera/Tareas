@@ -31,11 +31,6 @@ Cambia esto:
 define("APP_FOLDER", "gestion");
 ```
 
-Por esto: 
- ```php
-define("APP_FOLDER", "nombre_carpeta");
-```
-
 Existe un usuario por defecto:
 
 Usuario: admin | Contraseña: admin
