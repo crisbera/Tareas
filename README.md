@@ -23,13 +23,6 @@ Debe quedar algo como htdocs/tareas.
 
 2. Crea una base de datos llamada tareas desde phpmyadmin.
 3. Importa el archivo de la base de datos ubicado en tareas/docs/database/estructura.sql en tu gestor de base de datos MySQL.
-=======
-```Shell
-git clone https://github.com/crisbera/Gestion.git gestion 
-```
-1. Para instalar la aplicación, clónala con Git Bash dentro de la carpeta htdocs con la instrucción anterior. 
-2. Crea una base de datos llamada gestion desde phpmyadmin.
-3. Importa el archivo de la base de datos ubicado en gestion/docs/database/estructura.sql en tu gestor de base de datos MySQL.
 4. Inserta los datos de configuración según tu servidor en aplication/config.php
 5. Invoca la aplicación desde http://localhost/tareas
 
