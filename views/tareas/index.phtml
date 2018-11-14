@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-sm-9"><h2>Listado de tareas</h2></div>
 	<div class="col-sm-3">
-		<a href="tareas/add">
+		<a href="<?php echo APP_URL."tareas/agregar"; ?>">
 	 		<button type="button" class="btn btn-primary add">
 	 			<span class="glyphicon glyphicon-plus"></span> Tarea
 	 		</button>
 	 	</a>
-	 	<a href="categorias/add">
+	 	<a href="<?php echo APP_URL."categorias/agregar"; ?>">
 	 		<button type="button" class="btn btn-primary add">
 	 			<span class="glyphicon glyphicon-plus"></span> Categoria
 	 		</button>
@@ -22,7 +22,7 @@
 		   <?php
 		  	$i = 0;
 		  	$categoriasId= array();
-			foreach ($categorias as $categoria): 
+			foreach ($this->categorias as $categoria): 
 				if ($i==0): ?>
 					<li class="active"><a data-toggle="tab" href="#<?php echo $categoria["nombre"]; ?>"><?php echo $categoria["nombre"]; ?></a></li>
 			<?php else: ?>
@@ -47,6 +47,13 @@
 			<div id="<?php echo $categoriaId["nombre"][$j]; ?>" class="tab-pane fade">
 		<?php endif; ?>
 		<br>
+	
+		<?php
+
+		if (empty($this->tareas)):
+				echo "<h3>Sin tareas</h3>";
+		else:
+		?>			
 		<table class="table">
 			<tr>
 				<th>ID</th>
@@ -55,45 +62,47 @@
 				<th>Prioridad</th>
 				<th>Acción</th>
 			</tr>
-		<?php foreach ($tareas as $tarea): 
-				if ($tarea[1] == $categoriaId["id"][$j]):
+		<?php 
+
+			foreach ($this->tareas as $tarea): 
+				if ($tarea["categorias"]["id"]== $categoriaId["id"][$j]):
 		?>
 			<tr>
-				<td><?php echo $tarea[0]; ?></td>
+				<td><?php echo $tarea["tareas"]["id"]; ?></td>
 				<td><?php 
-					if($tarea[5]==0):
-						echo "<s>".$tarea[2]."</s>"; 	
+					if($tarea["tareas"]["status"]==0):
+						echo "<s>".$tarea["tareas"]["nombre"]."</s>"; 	
 					else:
-						echo $tarea[2];
+						echo $tarea["tareas"]["nombre"];
 					endif;
 					?>
 				</td>
 				<td><?php
-					$date = date_create($tarea[3]);
+					$date = date_create($tarea["tareas"]["fecha"]);
 					echo date_format($date, 'd/m/Y');
 					?>
 				</td>
 				<td><?php 
-					if ($tarea[4]<=3):
+					if ($tarea["tareas"]["prioridad"]<=3):
 						echo '<span class="label label-success">Baja&nbsp;&nbsp;&nbsp;</span>';
-					elseif($tarea[4]<=6):
+					elseif($tarea["tareas"]["prioridad"]<=6):
 						echo '<span class="label label-warning">Media</span>';	
-					elseif($tarea[4]<=10):
+					elseif($tarea["tareas"]["prioridad"]<=10):
 						echo '<span class="label label-danger">Alta&nbsp;&nbsp;&nbsp;</span>';
 					endif;
 					?>
 				</td>
-				<td><a href="tareas/edit/<?php echo $tarea[0]; ?>"><span class="glyphicon glyphicon-edit"></a>
-			<?php 	if ($tarea[5]==0): ?>
-						<a href="tareas/status/on/<?php echo $tarea[0]; ?>">
+				<td><a href="tareas/edit/<?php echo $tarea["tareas"]["id"]; ?>"><span class="glyphicon glyphicon-edit"></a>
+			<?php 	if ($tarea["tareas"]["status"]==0): ?>
+						<a href="tareas/status/on/<?php echo $tarea["tareas"]["id"]; ?>">
 							<span class="glyphicon glyphicon-remove"></span>
 						</a>
 					<?php else: ?>
-						<a href="tareas/status/off/<?php echo $tarea[0]; ?>">
+						<a href="tareas/status/off/<?php echo $tarea["tareas"]["id"]; ?>">
 							<span class="glyphicon glyphicon-ok"></span>
 						</a>
 			<?php 	endif; ?>
-						<a href="tareas/delete/<?php echo $tarea[0]; ?>">
+						<a href="tareas/delete/<?php echo $tarea["tareas"]["id"]; ?>">
 							<span class="glyphicon glyphicon-trash"></span>
 						</a>
 					</td>
@@ -101,8 +110,10 @@
 		<?php 
 		endif;
 		endforeach; 
+		
 		?>
 		</table>
+	<?php endif; ?>
 	</div>
 <?php endfor; ?>
 </div>

@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Gestión de tareas</title>
-	<base href="<?php echo APP_URL; ?>">
-	<link rel="stylesheet" type="text/css" 
-	href="<?php echo APP_URL_CSS; ?>bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" 
-	href="<?php echo APP_URL_CSS; ?>style.css">
-  	<script src="<?php echo APP_URL_JS; ?>jquery.min.js"></script>
-  	<script src="<?php echo APP_URL_JS; ?>bootstrap.min.js"></script>
+	<title>Framework Básico 
+	<?php if (isset($this->titulo)) {
+		echo ": ".$this->titulo;
+	}?>
+	</title>
+
+	<link rel="stylesheet" href="<?php echo $_layoutParams["ruta_css"]; ?>bootstrap.min.css">
+	<script src="<?php echo $_layoutParams["ruta_js"]; ?>jquery-3.3.1.min.js"></script>
+	<script src="<?php echo $_layoutParams["ruta_js"]; ?>bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
+	
+	<?php
+	if ($this->_msg->hasMessages()) {
+		echo $this->_msg->display();
+	}
+	?>

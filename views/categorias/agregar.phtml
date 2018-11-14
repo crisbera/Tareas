@@ -4,7 +4,7 @@
   <div class="col-sm-4"><br /><a href="tareas"><button type="button" class="btn btn-primary add"><span class="glyphicon glyphicon-arrow-left"></span> Volver a tareas</button></a></div>
 </div>
 
-<form action="categorias/add" method="POST" role="form">
+<form action="<?php echo APP_URL; ?>/categorias/agregar" method="POST" role="form">
 	<div class="form-group">
     	<label for="nombre">Nombre de la categoría:</label>
     	<input type="text" class="form-control" id="nombre" name="nombre">
